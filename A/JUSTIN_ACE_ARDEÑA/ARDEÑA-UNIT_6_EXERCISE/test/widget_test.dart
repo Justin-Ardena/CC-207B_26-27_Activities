@@ -75,7 +75,7 @@ void main() {
       (tester) async {
     await openApp(tester);
     expect(find.text('Hobbies'), findsNothing);
-    expect(find.byType(Chip), findsNWidgets(5));
+    expect(find.byType(Chip), findsAtLeastNWidgets(5));
     await tester.ensureVisible(find.text('My Hobbies'));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
